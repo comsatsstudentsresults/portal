@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+  <h2>Student Result</h2>
+
+  <!-- ONLY IMAGE, NO NAME -->
+  <img id="resultImage" src="" alt="Result Image"
+       style="width:100%; max-width:600px; display:none;">
+</div>
+
+<script>
+  // Check if user is logged in
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  if (isLoggedIn !== "true") {
+    // Not logged in → go back to login page
+    window.location.href = "index.html";
+  } else {
+    // Show image only after login
+    const img = document.getElementById("resultImage");
+    img.src = "student/student.png";
+    img.style.display = "block";
+  }
+</script>
+
+</body>
+</html>
